@@ -1,0 +1,27 @@
+{
+  "name": "api-to-upload-images",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoryvivek/API-to-upload-images-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoryvivek/API-to-upload-images-nodejs/issues"
+  },
+  "homepage": "https://github.com/victoryvivek/API-to-upload-images-nodejs#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "mutter": "^1.0.1",
+    "nodemon": "^2.0.1"
+  }
+}
