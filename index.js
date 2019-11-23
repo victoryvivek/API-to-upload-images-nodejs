@@ -31,6 +31,7 @@ app.get("/", (req, res, next) => {
   let storage = path.resolve(__dirname, "files", "images.jpg");
   let x = storage.toString();
 
+
   axios({
     url: url,
     method: "GET",
@@ -39,14 +40,11 @@ app.get("/", (req, res, next) => {
     resp.data.pipe(fs.createWriteStream(storage));
     cloudinary.uploader.upload(x, function(err, result) {
       console.log(err);
-      return res.json({
-          message : 'Image Uploaded Successfully',
-          result: result
-      })
+      console.log('Image Uploaded');
     });
   });
 
   return res.json({
-    message: "Request Procesing"
+    message: "Image Uploaded",
   });
 });
