@@ -24,6 +24,9 @@ app.listen(8000, () => {
   console.log("server running");
 });
 
+// const x ="https://images.unsplash.com/photo-1572288623190-5bb8b0d81aa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60";
+// console.log(encodeURIComponent(x));
+
 app.get("/", (req, res, next) => {
   const url = req.query.val;
   console.log("url : " + url);
@@ -38,13 +41,14 @@ app.get("/", (req, res, next) => {
     responseType: "stream"
   }).then(resp => {
     resp.data.pipe(fs.createWriteStream(storage));
-    cloudinary.uploader.upload(x, function(err, result) {
+    cloudinary.uploader.upload(x).then(result=>{
+      return res.json({
+        message:'Image uploaded',
+        result:result
+      });
+    }).catch(err=>{
       console.log(err);
-      console.log('Image Uploaded');
     });
   });
-
-  return res.json({
-    message: "Image Uploaded",
-  });
+  
 });
