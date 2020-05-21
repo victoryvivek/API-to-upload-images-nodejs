@@ -8,14 +8,13 @@ const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
 const path = require("path");
 
-const CLOUDINARY_API_URL =
-  "https://api.cloudinary.com/v1_1/dxjw59s8q/image/upload";
-const CLOUDINARY_PRESET = "ub8x4sqg";
+const CLOUDINARY_API_URL ="CLOUDINARY_API_URL";
+const CLOUDINARY_PRESET = "CLOUDINARY_PRESET";
 
 cloudinary.config({
-  cloud_name: "dxjw59s8q",
-  api_key: "368959491475955",
-  api_secret: "mSsNmFWiWXb2-0hmq6PtgFoE4xM"
+  cloud_name: "cloud_name",
+  api_key: "api_key",
+  api_secret: "api_secret"
 });
 
 const app = express();
